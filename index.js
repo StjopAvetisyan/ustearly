@@ -77,7 +77,7 @@ app.get('/', function (req,res,next){
     res.send({res:"OK"});
 });
 
-app.listen(process.env.PORT | 3000, (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
     if (!err)
         console.log(`Server is listening to ${process.env.PORT | 3000}`);
 });
