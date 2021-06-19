@@ -73,6 +73,9 @@ async function append(obj) {
 }
 
 app.post('/', sendmail);
+app.get('/', function (req,res,next){
+    res.send({res:"OK"});
+});
 
 app.listen(process.env.PORT | 3000, (err) => {
     if (!err)
