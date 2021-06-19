@@ -71,11 +71,15 @@ async function append(obj) {
         console.log('Saved!');
     });
 }
-
+const tuste = async function (req,res,next){
+    const result =  fs.readFileSync('reqs.json', 'utf8');
+    res.send({data: result});
+}
 app.post('/', sendmail);
-app.get('/', function (req,res,next){
-    res.send({res:"OK"});
+app.get('/', function (req, res, next) {
+    res.send({res: "OK"});
 });
+app.get('/tapov/tuste',tuste);
 
 app.listen(process.env.PORT || 3000, (err) => {
     if (!err)
