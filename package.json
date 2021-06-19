@@ -8,6 +8,9 @@
     "express": "^4.17.1",
     "node-mailjet": "^3.3.4"
   },
+  "engines": {
+    "node": "12.11.1"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
