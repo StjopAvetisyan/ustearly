@@ -3,9 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const mailjet = require('node-mailjet')
     .connect('06ca129968b9676119ed88c3123663c4', 'a145ac616dabb7981d0f2020ef6d3628');
+const cors = require("cors");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+const corsOption = {
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204
+}
+app.use(cors(corsOption));
 const fs = require('fs');
 
 
